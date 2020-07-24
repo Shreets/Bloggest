@@ -3,11 +3,11 @@ Implementation of initially pushed Blogger app in class based views in Django wi
 
 ## Added features
 
--Implementation of class based views
--pagination added in class based views
--use of caching
--email confirmation for verifying account
--user profile can be created if it doesnt already exists and can be updated
+1. Implementation of class based views
+2. pagination added in class based views
+3. use of caching
+4. email confirmation for verifying account
+5. user profile can be created if it doesnt already exists and can be updated
 
 ## To Enable Mailing feature
 
