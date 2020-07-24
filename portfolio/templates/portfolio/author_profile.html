@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+{% load static %}
+
+<div class="blog-body">
+    {% if not authors %}
+    <a href="{% url 'createprofile' %}">
+            <button class="btn btn btn-info">Create Profile</button>
+        </a>
+    {% endif %}
+    <ul>
+        {% for author in authors %}
+        <li>
+            <div class="author-profile">
+                {% if author.image %}
+                <div class="bio-img">
+                    <img height="100" src="{{author.image.url}}" width="100"/>
+                </div>
+                {%endif%}
+                <div class="bio">
+                    <b>Username</b> : {{author.username}}<br>
+                    <b>Name</b> : {{author.Name}}<br>
+                    <b>Location</b> : {{author.Location}}<br>
+                    <b>Bio</b> : {{author.Bio}}<br>
+                    <b>Work</b> : {{author.Work}}<br>
+                </div>
+                <div class="form-buttons">
+                    <form action="{%url 'updateprofile' author.id %}" method="GET">
+                        <button class="btn btn-sm btn-warning" type="submit">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </li>
+        <hr>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

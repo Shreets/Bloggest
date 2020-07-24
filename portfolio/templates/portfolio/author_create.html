@@ -1,0 +1,10 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+<div class="create-form">
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-info" type="submit">Save</button>
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogger | Home</title>
+    <link href="{% static 'portfolio/custom.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-wrapper">
+        <div class="regular-nav">
+            <a href="{% url 'home' %}">HOME</a>
+            <a href="{% url 'blog:bloglist' %}">BLOGS</a>
+            <a href="{% url 'authors' %}">AUTHORS</a>
+        </div>
+        <div class="auth-nav">
+            {% if user.is_authenticated %}
+            <h5>Hello {{user.username}}!</h5>
+            <a class="btn btn-primary" href="{% url 'create' %}">Create New Blog</a>
+            <a class="btn btn-primary" href="{% url 'authorpage' %}">My Blogs</a>
+            <a class="btn btn-primary" href="{% url 'personalprofile' %}">My Profile</a>
+
+            <form action="{% url 'logoutuser' %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn-sm btn-danger" type="submit">Log Out</button>
+            </form>
+            <br>
+            {% else %}
+            <a class="btn btn-primary" href="{% url 'signupuser' %}">Sign Up To Be an Author</a>
+            <a class="btn btn-primary" href="{% url 'loginuser' %}">Log In As Author</a>
+            {% endif %}
+            <br><br>
+        </div>
+    </div>
+</nav>
+<br>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

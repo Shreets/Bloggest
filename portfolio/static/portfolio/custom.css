@@ -1,0 +1,162 @@
+*{
+    margin: 0
+    padding: 0
+}
+
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+li {
+    list-style : none
+}
+
+.navbar{
+   background: cornflowerblue;
+ }
+
+.navbar .regular-nav a {
+  color: #f4f4f4;
+  font-size: 20px;
+  font-weight: 700;
+  word-spacing: 2rem;
+  margin-left: 1.5rem ;
+}
+
+.nav-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-nav{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.auth-nav h5{
+    color: #f4f4f4;
+}
+
+.auth-nav a{
+    margin-left: 1.5rem ;
+}
+
+.auth-nav button{
+    margin-left: 1.5rem ;
+    margin-top: 13px
+}
+
+.home-wrapper{
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.home-wrapper h1{
+   font-family: 'Lobster', cursive;
+}
+
+.blog_body h1{
+    text-align: center;
+}
+
+.blog_body .filter{
+    border: 3px solid cornflowerblue;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.blog_body .filter button{
+    margin-left: 1rem;
+}
+
+.signup{
+    background: rgb(178,228,246);
+    background: linear-gradient(90deg, rgba(178,228,246,1) 0%, rgba(109,122,221,1) 50%, rgba(172,161,235,1) 100%);
+}
+
+.signup-container{
+
+    margin: 10rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-wrapper{
+    background: #b2e4f6;
+    border: 2px solid black;
+    padding: 2rem;
+    text-align: center;
+
+}
+
+.blog_title{
+     font-family: 'Lobster', cursive;
+}
+
+.blog-body {
+   margin-top: 0.5rem;
+   background: rgb(241, 241, 250);
+   padding: 2rem;
+}
+
+.blog-body a{
+   color: cornflowerblue;
+}
+
+.blog-body li{
+   padding: 1rem;
+}
+
+.blog-body h5{
+  color: rgb(112, 108, 108);
+  font-size: 14px;
+}
+
+.err{
+    color: brown;
+}
+
+.form-buttons{
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-buttons button{
+    margin-right: 0.5rem;
+}
+
+.label, .create-label {
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+.create-field{
+    margin-left: 3rem;
+}
+
+.blog-detail p{
+    text-align: justify
+}
+
+.blog-detail img{
+    margin: 2rem;
+}
+
+.create-form{
+    border: 2px solid black;
+    padding: 2rem;
+}
+
+.author-profile{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+

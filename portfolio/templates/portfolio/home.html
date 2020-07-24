@@ -1,0 +1,18 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+{% load static %}
+
+<div class="home-wrapper">
+    <h1>WELCOME TO BLOGGEST!</h1>
+    <br>
+    <p>Welcome to our blog that is entirely dedicated to bringing you news and stories from our authors so you can
+        remain up-to-date
+        with all that is happening in the technical world.<br>
+        if you are here as a <b>READER</b>, please fo to our blog page to find an article that might interest you. If
+        you are a <b>WRITER</b>, interested to contribute to our site, sign up as author and start posting your blogs
+    </p>
+    <br>
+    <a class="btn btn-info" href="{% url 'blog:bloglist' %}">Go to blog page</a>
+</div>
+
+{% endblock %}

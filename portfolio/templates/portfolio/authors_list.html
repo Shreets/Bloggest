@@ -1,0 +1,27 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+{% load static %}
+
+<div class="blog-body">
+<ul>
+    {% for author in authors%}
+
+    <li>
+        <div class="author-profile">
+        <div class="bio-img">
+            <img height="100" src="{{author.image.url}}" width="100"/>
+        </div>
+        <div class="bio">
+        <b>Username</b> : {{author.username}}<br>
+        <b>Name</b> : {{author.Name}}<br>
+        <b>Location</b> : {{author.Location}}<br>
+        <b>Bio</b> : {{author.Bio}}<br>
+        <b>Work</b> : {{author.Work}}<br>
+        </div>
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+</div>
+
+{% endblock %}

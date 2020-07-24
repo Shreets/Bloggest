@@ -1,0 +1,49 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+
+<h2 class="blog_title">Here are your blogs!</h2><br>
+<div class="blog-body">
+<ul>
+{% for blog in blogs%}
+ <li>
+        <a href="{% url 'blog:detailview' blog.id %}"><h2>{{blog.title}}</h2></a>
+       {% if blog.date_updated %}
+         <h5>Updated by {{blog.author| capfirst}} on: {{blog.date_updated | date:'M j Y H:i' }}</h5>
+        {% else %}
+        <h5>Posted by {{blog.author| capfirst}} on: {{blog.date_created | date:'M j Y H:i' }}</h5>
+        {% endif %}
+        <h5>Tag : {{blog.tag}}</h5>
+        <p>{{blog.body | truncatechars:120}}</p>
+    <div class="form-buttons">
+     <form action="{% url 'updateblog' blog.id %}" method="GET">
+         {% csrf_token %}
+         <button class="btn btn-sm btn-warning" type="submit">Update</button>
+     </form>
+
+     <form action="{% url 'deleteblog' blog.id %}" method="POST">
+         {% csrf_token %}
+         <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+     </form>
+    </div>
+    </li>
+    <br>
+    <hr>
+ {% endfor %}
+</ul>
+</div>
+<br>
+{% if is_paginated %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+    {% endif %}
+  </ul>
+  </nav>
+</div>
+{% endif %}
+{% endblock %}

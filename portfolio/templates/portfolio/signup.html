@@ -1,0 +1,38 @@
+{%load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogger | Signup</title>
+    <link href="{% static 'portfolio/custom.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+</head>
+<body class="signup">
+
+<div class="container">
+    <div class="signup-container">
+
+        <h1>Sign Up</h1>
+        <br>
+        <div class="signup-wrapper">
+            <h4 class="err">{{error}}</h4>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <!--                {{form.as_p}}-->
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }} {{ field }}
+                </div>
+                {% endfor %}
+                <button class="btn btn-info" type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
